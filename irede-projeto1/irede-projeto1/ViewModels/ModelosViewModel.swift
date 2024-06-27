@@ -15,8 +15,8 @@ import Foundation
 class ModelosViewModel: Observable {
     @Published var modelos : [Modelo] = []
 
-    func fetchModelos(codigo: String) {
-        guard let url = URL(string: "https://parallelum.com.br/fipe/api/v1/carros/marcas/\(codigo)/modelos") else {
+    func fetchModelos(forMarca marcaCodigo: String) {
+        guard let url = URL(string: "https://parallelum.com.br/fipe/api/v1/carros/marcas/\(marcaCodigo)/modelos") else {
             print("URL inválida")
             return
         }

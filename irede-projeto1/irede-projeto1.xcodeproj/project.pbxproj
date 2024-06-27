@@ -13,6 +13,7 @@
 		80A7F8302C2CDC3500EBBD27 /* ModelosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F82F2C2CDC3500EBBD27 /* ModelosViewModel.swift */; };
 		80A7F8332C2CE0CD00EBBD27 /* OpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F8322C2CE0CD00EBBD27 /* OpenView.swift */; };
 		80A7F8352C2CE1DA00EBBD27 /* MarcasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F8342C2CE1DA00EBBD27 /* MarcasView.swift */; };
+		80A7F8372C2E0AF000EBBD27 /* ModelosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F8362C2E0AF000EBBD27 /* ModelosView.swift */; };
 		80D10E2E2C2B7E9700F916EE /* irede_projeto1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D10E2D2C2B7E9700F916EE /* irede_projeto1App.swift */; };
 		80D10E322C2B7E9800F916EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D10E312C2B7E9800F916EE /* Assets.xcassets */; };
 		80D10E352C2B7E9800F916EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D10E342C2B7E9800F916EE /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		80A7F82F2C2CDC3500EBBD27 /* ModelosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelosViewModel.swift; sourceTree = "<group>"; };
 		80A7F8322C2CE0CD00EBBD27 /* OpenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenView.swift; sourceTree = "<group>"; };
 		80A7F8342C2CE1DA00EBBD27 /* MarcasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcasView.swift; sourceTree = "<group>"; };
+		80A7F8362C2E0AF000EBBD27 /* ModelosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelosView.swift; sourceTree = "<group>"; };
 		80D10E2A2C2B7E9700F916EE /* irede-projeto1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "irede-projeto1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D10E2D2C2B7E9700F916EE /* irede_projeto1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = irede_projeto1App.swift; sourceTree = "<group>"; };
 		80D10E312C2B7E9800F916EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				80A7F8342C2CE1DA00EBBD27 /* MarcasView.swift */,
+				80A7F8362C2E0AF000EBBD27 /* ModelosView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				80A7F8332C2CE0CD00EBBD27 /* OpenView.swift in Sources */,
 				80A7F8302C2CDC3500EBBD27 /* ModelosViewModel.swift in Sources */,
+				80A7F8372C2E0AF000EBBD27 /* ModelosView.swift in Sources */,
 				80A7F82D2C2CDB0B00EBBD27 /* MarcaViewModel.swift in Sources */,
 				80D10E2E2C2B7E9700F916EE /* irede_projeto1App.swift in Sources */,
 				80A7F8352C2CE1DA00EBBD27 /* MarcasView.swift in Sources */,
