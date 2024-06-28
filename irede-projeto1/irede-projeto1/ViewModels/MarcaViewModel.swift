@@ -42,6 +42,7 @@ class MarcaViewModel: Observable {
                 let marcas = try JSONDecoder().decode([Marca].self, from: data)
                 DispatchQueue.main.async {
                     self.marcas = marcas
+                    print("Deu bom")
                 }
             } catch {
                 print("Erro ao decodificar JSON: (error)")

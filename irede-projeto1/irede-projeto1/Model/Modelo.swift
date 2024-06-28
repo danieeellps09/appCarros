@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Modelo:Codable {
+struct Modelo:Decodable {
     let codigo: Int
     let nome: String
 }

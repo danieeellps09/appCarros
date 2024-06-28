@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct ModelosView: View {
-     var viewModel: ModelosViewModel
+    var viewModel: ModelosViewModel
     let marcaCodigo: String
     
     var body: some View {
