@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct ModelosView: View {
-    var viewModel: ModelosViewModel
+    @StateObject var viewModel: ModelosViewModel
     let marcaCodigo: String
     
     var body: some View {
@@ -10,8 +10,8 @@ struct ModelosView: View {
             Text("Modelos")
                 .font(.title)
             
-            List(viewModel.modelos, id: \.codigo) { modelo in
-                Text(modelo.nome)
+            List(viewModel.modelos, id: \.codigo) { modelos in
+                Text(modelos.nome)
             }
             .onAppear {
                 viewModel.fetchModelos(forMarca: marcaCodigo)

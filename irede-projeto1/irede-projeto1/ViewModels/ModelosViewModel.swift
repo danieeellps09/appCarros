@@ -1,19 +1,13 @@
+// ModelosViewModel.swift
+// irede-projeto1
 //
-//  ModelViewModel.swift
-//  irede-projeto1
+// Created by Daniel Lopes da Silva on 26/06/24.
 //
-//  Created by Daniel Lopes da Silva on 26/06/24.
-//
-
-
-
-import SwiftUI
 
 import Foundation
 
-
-class ModelosViewModel: Observable {
-    @Published var modelos : [Modelo] = []
+class ModelosViewModel: ObservableObject {
+    @Published var modelos: [Modelo] = []
 
     func fetchModelos(forMarca marcaCodigo: String) {
         guard let url = URL(string: "https://parallelum.com.br/fipe/api/v1/carros/marcas/\(marcaCodigo)/modelos") else {
@@ -21,13 +15,9 @@ class ModelosViewModel: Observable {
             return
         }
 
-        let semaphore = DispatchSemaphore(value: 0)
-
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            defer { semaphore.signal() }
-
-            if error != nil {
-                print("Erro: (error)")
+            if let error = error {
+                print("Erro: \(error)")
                 return
             }
 
@@ -39,18 +29,16 @@ class ModelosViewModel: Observable {
             }
 
             do {
-                let modelos = try JSONDecoder().decode([Modelo].self, from: data)
+                let modelosResponse = try JSONDecoder().decode(Modelos.self, from: data)
                 DispatchQueue.main.async {
-                    self.modelos = modelos
-                    print("deu bom os dados modelos")
-
+                    self.modelos = modelosResponse.modelos
+                    print("Modelos carregados com sucesso")
                 }
             } catch {
-                print("Erro ao decodificar JSON: (error)")
+                print("Erro ao decodificar JSON: \(error)")
             }
         }
 
         task.resume()
     }
-
 }
