@@ -3,7 +3,7 @@ import Foundation
 import SwiftUI
 
 struct MarcasView: View {
-    var viewModel = MarcaViewModel()
+    @StateObject var viewModel = MarcaViewModel()
     
     var body: some View {
         NavigationStack{

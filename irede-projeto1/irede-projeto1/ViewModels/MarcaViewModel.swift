@@ -12,7 +12,7 @@ import SwiftUI
 import Foundation
 
 
-class MarcaViewModel: Observable {
+class MarcaViewModel: ObservableObject {
     @Published var marcas : [Marca] = []
 
     func fetchMarcas() {
