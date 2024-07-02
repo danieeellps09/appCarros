@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		285A4B3F2C3380FB0087706B /* ImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A4B3E2C3380FB0087706B /* ImageBackgroundView.swift */; };
 		80A7F8292C2CDA5F00EBBD27 /* Marca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F8282C2CDA5F00EBBD27 /* Marca.swift */; };
 		80A7F82B2C2CDAB200EBBD27 /* Modelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F82A2C2CDAB200EBBD27 /* Modelo.swift */; };
 		80A7F82D2C2CDB0B00EBBD27 /* MarcaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F82C2C2CDB0B00EBBD27 /* MarcaViewModel.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		285A4B3E2C3380FB0087706B /* ImageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBackgroundView.swift; sourceTree = "<group>"; };
 		80A7F8282C2CDA5F00EBBD27 /* Marca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marca.swift; sourceTree = "<group>"; };
 		80A7F82A2C2CDAB200EBBD27 /* Modelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelo.swift; sourceTree = "<group>"; };
 		80A7F82C2C2CDB0B00EBBD27 /* MarcaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcaViewModel.swift; sourceTree = "<group>"; };
@@ -83,9 +85,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		285A4B3D2C3380C40087706B /* Comp */ = {
+			isa = PBXGroup;
+			children = (
+				285A4B3E2C3380FB0087706B /* ImageBackgroundView.swift */,
+			);
+			path = Comp;
+			sourceTree = "<group>";
+		};
 		80A7F8252C2CD9EE00EBBD27 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				285A4B3D2C3380C40087706B /* Comp */,
 				80A7F8342C2CE1DA00EBBD27 /* MarcasView.swift */,
 				80A7F8362C2E0AF000EBBD27 /* ModelosView.swift */,
 			);
@@ -302,6 +313,7 @@
 				80A7F8332C2CE0CD00EBBD27 /* OpenView.swift in Sources */,
 				80A7F8302C2CDC3500EBBD27 /* ModelosViewModel.swift in Sources */,
 				80A7F8372C2E0AF000EBBD27 /* ModelosView.swift in Sources */,
+				285A4B3F2C3380FB0087706B /* ImageBackgroundView.swift in Sources */,
 				80A7F82D2C2CDB0B00EBBD27 /* MarcaViewModel.swift in Sources */,
 				80D10E2E2C2B7E9700F916EE /* irede_projeto1App.swift in Sources */,
 				80A7F8352C2CE1DA00EBBD27 /* MarcasView.swift in Sources */,

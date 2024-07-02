@@ -8,7 +8,7 @@
 import Foundation
  
 // Marca.swift
-struct Marca: Codable{
+struct Marca: Codable, Hashable{
     let codigo: String
     let nome: String
 }

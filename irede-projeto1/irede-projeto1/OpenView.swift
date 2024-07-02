@@ -15,47 +15,52 @@ struct OpenView: View {
     var body: some View {
 
         NavigationStack {
-
-            ScrollView {
-
-                VStack(alignment: .center) {
-
+            ZStack{
+                
+                ImageBackgroundView()
+                ScrollView{
                     
+                    VStack(alignment: .center) {
 
-                    Spacer()
+                        
 
-                    
+                        Spacer()
 
-                    TitleView()
+                        
 
-                    
+                        TitleView()
 
-                    InformationContainerView()
+                        
 
-                    
+                        InformationContainerView()
 
-                    Spacer(minLength: 30)
+                        
 
-                    
+                        Spacer(minLength: 30)
 
-                    NavigationLink(destination: MarcasView()) {
+                        
 
-                        Text("Continuar")
+                        NavigationLink(destination: MarcasView()) {
 
-                            .customButton()
+                            Text("Continuar")
 
-                            .padding(.horizontal)
+                                .customButton()
+
+                                .padding(.horizontal)
+
+                        }
+
+                       
 
                     }
 
-                   
-
                 }
-
+                
             }
 
-        }
+             
 
+        }
     
 
     }

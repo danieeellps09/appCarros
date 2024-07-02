@@ -4,14 +4,24 @@ import SwiftUI
 
 struct MarcasView: View {
     @StateObject var viewModel = MarcaViewModel()
+    @State private var searchText = ""
     
+    var filteredNames: [Marca] {
+        if searchText.isEmpty {
+            viewModel.marcas
+        } else {
+            viewModel.marcas.filter { $0.nome.localizedStandardContains(searchText) }
+        }
+    }
+
     var body: some View {
+
+        
         NavigationStack{
            VStack {
-                Text("Marcas")
-                    .font(.title)
-                
-                List(viewModel.marcas, id: \.codigo) { marca in
+
+               
+                List(filteredNames, id: \.codigo) { marca in
                     
                     
                     NavigationLink(destination: ModelosView(viewModel: ModelosViewModel(), marcaCodigo: marca.codigo)) {
@@ -20,14 +30,21 @@ struct MarcasView: View {
                     }
                     
                 }
-            }.onAppear {
-                viewModel.fetchMarcas()
-                
-        
+                .padding(.top)
+                .searchable(text: $searchText, prompt: "Escolha sua marca")
             }
+           
+           .onAppear {
+                    viewModel.fetchMarcas()
+            }
+            .navigationTitle("Marcas")
+            
         }
+        
+        
         .navigationBarBackButtonHidden()
     }
 }
-#Preview {MarcasView()
+#Preview {
+    MarcasView()
 }
