@@ -15,9 +15,11 @@ struct OpenView: View {
     var body: some View {
 
         NavigationStack {
+            
             ZStack{
                 
                 ImageBackgroundView()
+//                    .ignoresSafeArea()
                 ScrollView{
                     
                     VStack(alignment: .center) {
@@ -130,6 +132,7 @@ struct TitleView: View {
             HStack {
 
                 Image(systemName: "car.side.fill")
+                    .foregroundColor(.black.opacity(0.8))
 
                     .font(.largeTitle)
 
@@ -140,18 +143,19 @@ struct TitleView: View {
 
             }
 
-            .padding(.top, UIScreen.main.bounds.height / 4)
+            .padding(.top, UIScreen.main.bounds.height / 7)
 
             
 
             Text("Bem-vindo \nWebCarros")
+                .foregroundStyle(.white.opacity(0.7))
 
                 .customTitleText()
 
-                .multilineTextAlignment(.center)
+//                .multilineTextAlignment(.center)
 
         }
-
+            
     }
 
 }
@@ -193,10 +197,12 @@ struct ButtonModifier: ViewModifier {
             .background(RoundedRectangle(cornerRadius: 15, style: .continuous)
 
                 .fill())
-
+            .safeAreaPadding(11)
             .padding(.bottom)
+            
+            
 
-        
+           
 
     }
 

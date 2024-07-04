@@ -17,7 +17,7 @@ struct MarcasView: View {
     var body: some View {
 
         
-        NavigationStack{
+//        NavigationStack{
            VStack {
 
                
@@ -30,21 +30,24 @@ struct MarcasView: View {
                     }
                     
                 }
-                .padding(.top)
-                .searchable(text: $searchText, prompt: "Escolha sua marca")
-            }
+           }
+           .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Escolha sua marca")
+
            
            .onAppear {
                     viewModel.fetchMarcas()
             }
             .navigationTitle("Marcas")
+            .navigationBarTitleDisplayMode(.inline)
             
-        }
+//        }
         
         
         .navigationBarBackButtonHidden()
     }
 }
 #Preview {
-    MarcasView()
+    NavigationStack{
+        MarcasView()
+    }
 }
