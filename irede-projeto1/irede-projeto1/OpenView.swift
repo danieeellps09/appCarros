@@ -23,7 +23,7 @@ struct OpenView: View {
                 ScrollView{
                     
                     VStack(alignment: .center) {
-
+                        
                         
 
                         Spacer()
@@ -45,10 +45,18 @@ struct OpenView: View {
                         NavigationLink(destination: MarcasView()) {
 
                             Text("Continuar")
-
-                                .customButton()
-
-                                .padding(.horizontal)
+//                                .background(.black)
+                                .padding(.horizontal, 30)
+                                .foregroundColor(.black)
+                                .font(.headline)
+                                .background(.gray)
+                                .cornerRadius(3)
+                                .padding(.vertical,114)
+//                                .frame(minWidth: 10, maxWidth: .infinity, alignment: .center)
+                                
+                            
+                            
+                            
 
                         }
 
@@ -132,7 +140,7 @@ struct TitleView: View {
             HStack {
 
                 Image(systemName: "car.side.fill")
-                    .foregroundColor(.black.opacity(0.8))
+//                    .foregroundColor(.black.opacity(0.8))
 
                     .font(.largeTitle)
 
@@ -148,7 +156,7 @@ struct TitleView: View {
             
 
             Text("Bem-vindo \nWebCarros")
-                .foregroundStyle(.white.opacity(0.7))
+//                .foregroundStyle(.black.opacity(0.7))
 
                 .customTitleText()
 
@@ -168,7 +176,7 @@ struct InformationContainerView: View {
 
         VStack(alignment: .leading) {
 
-            InformationDetailView(title: "", subTitle: "Seu veiculo está aqui!", imageName: "car.side")
+//            InformationDetailView(title: "", subTitle: "Seu veiculo está aqui!", imageName: "car.side")
 
         }
 
@@ -181,23 +189,30 @@ struct InformationContainerView: View {
 
 
 struct ButtonModifier: ViewModifier {
+    
+    
 
     func body(content: Content) -> some View {
 
         content
+        
+            .shadow(color: .red, radius: 100)
+        
+//            .colorInvert()
+        
 
             .foregroundColor(.white)
 
             .font(.headline)
 
-            .padding()
+//            .padding()
 
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
 
-            .background(RoundedRectangle(cornerRadius: 15, style: .continuous)
+            .background(RoundedRectangle(cornerRadius: 5, style: .continuous)
 
                 .fill())
-            .safeAreaPadding(11)
+            .safeAreaPadding(110)
             .padding(.bottom)
             
             
@@ -215,6 +230,8 @@ extension View {
     func customButton() -> ModifiedContent<Self, ButtonModifier> {
 
         return modifier(ButtonModifier())
+        
+        
 
     }
 

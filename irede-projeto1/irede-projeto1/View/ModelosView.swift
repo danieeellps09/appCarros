@@ -4,6 +4,7 @@ import SwiftUI
 struct ModelosView: View {
     @StateObject var viewModel: ModelosViewModel
     @State private var searchText = String()
+    @AppStorage("isDarkMode") private var isDark = false
     
     var filteredNames: [Modelo] {
         if searchText.isEmpty {
@@ -12,28 +13,54 @@ struct ModelosView: View {
             viewModel.modelos.filter { modelo in  modelo.nome.localizedStandardContains(searchText) }
         }
     }
+    
+    
 
     let marcaCodigo: String
 
 
     var body: some View {
-        VStack {
-            
-            List(filteredNames, id: \.codigo) { modelos in
-                Text(modelos.nome)
-            }
-//            .padding(.top)
-            
-            .onAppear {
-                viewModel.fetchModelos(forMarca: marcaCodigo)
+        NavigationView{
+            VStack {
+                
+                //            ButtonLDView()
+                
+                List(filteredNames, id: \.codigo) { modelos in
+                    Text(modelos.nome)
+                    
+                    //                    .listRowBackground(Color.gray.opacity(0.8))
+                    
+                }
+                //            .background(Gradient(colors: [.white, .gray, .black]))
+                //            .background(.black)
+                //            .scrollContentBackground(.hidden)
+                //            .padding(.top)
+                //            .scrollContentBackground(.hidden)
+                
+                .onAppear {
+                    viewModel.fetchModelos(forMarca: marcaCodigo)
+                }
+                .navigationTitle("Modelos")
             }
         }
-        .navigationTitle("Modelos")
+        
+//        .navigationTitle("Modelos")
 //        .searchable(text: $searchText,prompt: "Escolha sua marca")
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Escolha sua marca")
-        .navigationBarTitleDisplayMode(.inline)
-       
+        .toolbar{
+            ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
+                Button(action:{isDark.toggle()},label:{ isDark ? Label("Dark",systemImage: "lightbulb.fill"): Label("Dark",systemImage: "lightbulb")
+                })
+            }
+
+        }        .environment(\.colorScheme, isDark ? .dark : .light)
+//        .navigationBarTitleDisplayMode(.inline)
+        
+      
+        
+        
     }
+    
         
 }
 
