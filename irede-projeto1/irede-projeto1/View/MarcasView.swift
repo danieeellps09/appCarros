@@ -61,8 +61,9 @@ struct MarcasView: View {
             
         } .toolbar{
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
-                Button(action:{isDark.toggle()},label:{ isDark ? Image(systemName: "moon.fill").foregroundStyle(.white): Image(systemName: "sun.max.fill").foregroundStyle(.black)
-                })
+//                Button(action:{isDark.toggle()},label:{ isDark ? Image(systemName: "moon.fill").foregroundStyle(.white): Image(systemName: "sun.max.fill").foregroundStyle(.black)
+//                })
+                ButtonLDView(isDark: $isDark )
             }
 
         }        .environment(\.colorScheme, isDark ? .dark : .light)

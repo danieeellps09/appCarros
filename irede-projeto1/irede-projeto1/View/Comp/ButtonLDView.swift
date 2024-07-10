@@ -8,44 +8,19 @@
 import SwiftUI
 
 struct ButtonLDView: View {
-    @AppStorage("isDarkMode") private var isDark = false
-    @State private var isSheet = false
+    @Binding var isDark : Bool
     var body: some View {
-//        NavigationView{
-//            VStack {
-//                List(0..<15,id:\.self){item in
-//                    NavigationLink(destination: Text("\(item)  number"), label :{
-//                        Text("\(item) number")})
-//                    
-//                }
-//                
-//                Button(action:{isSheet
-//                    .toggle()},label:{Label("add",systemImage: "plus")})
-//                .buttonStyle(.bordered)
-//                .tint(.mint)
-//                    }
-//                }
-//        .sheet(isPresented: $isSheet){
-//            Text("Sheet View")
-//                .preferredColorScheme(isDark ? .dark: .light)
-//        }
-        toolbar{
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
-                Button(action:{isDark.toggle()},label:{ isDark ? Label("Dark",systemImage: "lightbulb.fill"): Label("Dark",systemImage: "lightbulb")
+        Button(action:{isDark.toggle()},label:{ isDark ? Image(systemName: "moon.fill").foregroundStyle(.white): Image(systemName: "sun.max.fill").foregroundStyle(.black)
                 })
             }
-
-        }
-        .environment(\.colorScheme, isDark ? .dark : .light)
     }
-}
+
             
 
-
-
-#Preview {
-    
-        ButtonLDView()
+struct ButtonLDView_Previews: PreviewProvider {
+    static var previews: some View{
+        ButtonLDView(isDark: .constant(false))
+    }
     }
 
 

@@ -51,8 +51,9 @@ struct AnosView: View {
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Escolha sua marca")
         .toolbar{
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
-                Button(action:{isDark.toggle()},label:{ isDark ? Label("Dark",systemImage: "lightbulb.fill"): Label("Dark",systemImage: "lightbulb")
-                })
+//                Button(action:{isDark.toggle()},label:{ isDark ? Label("Dark",systemImage: "lightbulb.fill"): Label("Dark",systemImage: "lightbulb")
+//                })
+                ButtonLDView( isDark: $isDark)
             }
 
         }        .environment(\.colorScheme, isDark ? .dark : .light)
