@@ -1,22 +1,22 @@
 import Foundation
 import SwiftUI
 
-struct ModelosView: View {
-    @StateObject var viewModel: ModelosViewModel
+struct AnosView: View {
+    @StateObject var viewModel: AnosViewModel
     @State private var searchText = String()
     @AppStorage("isDarkMode") private var isDark = false
     
-    var filteredNames: [Modelo] {
+    var filteredNames: [Anos] {
         if searchText.isEmpty {
-            viewModel.modelos
+            viewModel.ano
         } else {
-            viewModel.modelos.filter { modelo in  modelo.nome.localizedStandardContains(searchText) }
+            viewModel.ano.filter { anos in  anos.nome.localizedStandardContains(searchText) }
         }
     }
     
     
 
-    let marcaCodigo: String
+    let modeloCodigo: String
 
 
     var body: some View {
@@ -25,17 +25,8 @@ struct ModelosView: View {
                 
                 //            ButtonLDView()
                 
-                List(filteredNames, id: \.codigo) { modelos in
-                    
-                    let codigo = String(modelos.codigo)
-
-                    NavigationLink(destination: AnosView(viewModel: AnosViewModel(), modeloCodigo: codigo)) {
-                        Text(modelos.nome)
-                        
-                        
-                        
-                        
-                    }
+                List(filteredNames, id: \.codigo) { ano in
+                    Text(ano.nome)
                     
                     //                    .listRowBackground(Color.gray.opacity(0.8))
                     
@@ -47,9 +38,9 @@ struct ModelosView: View {
                 //            .scrollContentBackground(.hidden)
                 
                 .onAppear {
-                    viewModel.fetchModelos(forMarca: marcaCodigo)
+                    viewModel.fetchAnos(forModelo:modeloCodigo)
                 }
-                .navigationTitle("Modelos")
+                .navigationTitle("Anos")
             }
         }
         
@@ -58,11 +49,11 @@ struct ModelosView: View {
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Escolha sua marca")
         .toolbar{
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
-                Button(action:{isDark.toggle()},label:{ isDark ? Image(systemName: "moon.fill").foregroundStyle(.white): Image(systemName: "sun.max.fill").foregroundStyle(.black)
+                Button(action:{isDark.toggle()},label:{ isDark ? Label("Dark",systemImage: "lightbulb.fill"): Label("Dark",systemImage: "lightbulb")
                 })
             }
 
-        }      .environment(\.colorScheme, isDark ? .dark : .light)
+        }        .environment(\.colorScheme, isDark ? .dark : .light)
 //        .navigationBarTitleDisplayMode(.inline)
         
       
