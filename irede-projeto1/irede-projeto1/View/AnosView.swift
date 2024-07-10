@@ -17,6 +17,8 @@ struct AnosView: View {
     
 
     let modeloCodigo: String
+    let marcaCodigo: String
+
 
 
     var body: some View {
@@ -38,7 +40,7 @@ struct AnosView: View {
                 //            .scrollContentBackground(.hidden)
                 
                 .onAppear {
-                    viewModel.fetchAnos(forModelo:modeloCodigo)
+                    viewModel.fetchAnos(forCarro:marcaCodigo,forModelo:modeloCodigo)
                 }
                 .navigationTitle("Anos")
             }

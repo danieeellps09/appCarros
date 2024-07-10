@@ -29,12 +29,8 @@ struct ModelosView: View {
                     
                     let codigo = String(modelos.codigo)
 
-                    NavigationLink(destination: AnosView(viewModel: AnosViewModel(), modeloCodigo: codigo)) {
+                    NavigationLink(destination: AnosView(viewModel: AnosViewModel(), modeloCodigo: codigo, marcaCodigo: marcaCodigo)) {
                         Text(modelos.nome)
-                        
-                        
-                        
-                        
                     }
                     
                     //                    .listRowBackground(Color.gray.opacity(0.8))

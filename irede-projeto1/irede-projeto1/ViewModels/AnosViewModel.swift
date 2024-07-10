@@ -15,8 +15,8 @@ import Foundation
 class AnosViewModel: ObservableObject {
     @Published var ano : [Anos] = []
 
-    func fetchAnos(forModelo modeloCodigo: String ) {
-        guard let url = URL(string: "https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos/\(modeloCodigo)/anos") else {
+    func fetchAnos(forCarro marcaCarro:String, forModelo modeloCodigo: String ) {
+        guard let url = URL(string: "https://parallelum.com.br/fipe/api/v1/carros/marcas/\(marcaCarro)/modelos/\(modeloCodigo)/anos") else {
             print("URL inválida")
             return
         }
