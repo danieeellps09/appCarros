@@ -10,6 +10,9 @@
 		285A4B3F2C3380FB0087706B /* ImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A4B3E2C3380FB0087706B /* ImageBackgroundView.swift */; };
 		285A4B412C38A4160087706B /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A4B402C38A4160087706B /* ToolbarView.swift */; };
 		285A4B432C38B6670087706B /* ButtonLDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A4B422C38B6670087706B /* ButtonLDView.swift */; };
+		285A4B452C3F43E90087706B /* ValoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A4B442C3F43E90087706B /* ValoresView.swift */; };
+		285A4B492C3F59BB0087706B /* ValoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A4B482C3F59BB0087706B /* ValoresViewModel.swift */; };
+		285A4B4B2C3F5AE90087706B /* Carros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A4B4A2C3F5AE90087706B /* Carros.swift */; };
 		80A7F8292C2CDA5F00EBBD27 /* Marca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F8282C2CDA5F00EBBD27 /* Marca.swift */; };
 		80A7F82B2C2CDAB200EBBD27 /* Modelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F82A2C2CDAB200EBBD27 /* Modelo.swift */; };
 		80A7F82D2C2CDB0B00EBBD27 /* MarcaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7F82C2C2CDB0B00EBBD27 /* MarcaViewModel.swift */; };
@@ -49,6 +52,9 @@
 		285A4B3E2C3380FB0087706B /* ImageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBackgroundView.swift; sourceTree = "<group>"; };
 		285A4B402C38A4160087706B /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		285A4B422C38B6670087706B /* ButtonLDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLDView.swift; sourceTree = "<group>"; };
+		285A4B442C3F43E90087706B /* ValoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValoresView.swift; sourceTree = "<group>"; };
+		285A4B482C3F59BB0087706B /* ValoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValoresViewModel.swift; sourceTree = "<group>"; };
+		285A4B4A2C3F5AE90087706B /* Carros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carros.swift; sourceTree = "<group>"; };
 		80A7F8282C2CDA5F00EBBD27 /* Marca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marca.swift; sourceTree = "<group>"; };
 		80A7F82A2C2CDAB200EBBD27 /* Modelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelo.swift; sourceTree = "<group>"; };
 		80A7F82C2C2CDB0B00EBBD27 /* MarcaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcaViewModel.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 				80A7F8342C2CE1DA00EBBD27 /* MarcasView.swift */,
 				80A7F8362C2E0AF000EBBD27 /* ModelosView.swift */,
 				80D4D38F2C3DE86C0089A32D /* AnosView.swift */,
+				285A4B442C3F43E90087706B /* ValoresView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 				80A7F82C2C2CDB0B00EBBD27 /* MarcaViewModel.swift */,
 				80A7F82F2C2CDC3500EBBD27 /* ModelosViewModel.swift */,
 				80D4D3932C3DE93F0089A32D /* AnosViewModel.swift */,
+				285A4B482C3F59BB0087706B /* ValoresViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 				80A7F8282C2CDA5F00EBBD27 /* Marca.swift */,
 				80A7F82A2C2CDAB200EBBD27 /* Modelo.swift */,
 				80D4D3912C3DE8C40089A32D /* Anos.swift */,
+				285A4B4A2C3F5AE90087706B /* Carros.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,18 +336,21 @@
 			files = (
 				80A7F8332C2CE0CD00EBBD27 /* OpenView.swift in Sources */,
 				80D4D3942C3DE93F0089A32D /* AnosViewModel.swift in Sources */,
+				285A4B452C3F43E90087706B /* ValoresView.swift in Sources */,
 				80A7F8302C2CDC3500EBBD27 /* ModelosViewModel.swift in Sources */,
 				80D4D3922C3DE8C40089A32D /* Anos.swift in Sources */,
 				80A7F8372C2E0AF000EBBD27 /* ModelosView.swift in Sources */,
 				285A4B3F2C3380FB0087706B /* ImageBackgroundView.swift in Sources */,
 				80A7F82D2C2CDB0B00EBBD27 /* MarcaViewModel.swift in Sources */,
 				80D4D3902C3DE86C0089A32D /* AnosView.swift in Sources */,
+				285A4B492C3F59BB0087706B /* ValoresViewModel.swift in Sources */,
 				80D10E2E2C2B7E9700F916EE /* irede_projeto1App.swift in Sources */,
 				285A4B412C38A4160087706B /* ToolbarView.swift in Sources */,
 				80A7F8352C2CE1DA00EBBD27 /* MarcasView.swift in Sources */,
 				80A7F8292C2CDA5F00EBBD27 /* Marca.swift in Sources */,
 				80A7F82B2C2CDAB200EBBD27 /* Modelo.swift in Sources */,
 				285A4B432C38B6670087706B /* ButtonLDView.swift in Sources */,
+				285A4B4B2C3F5AE90087706B /* Carros.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

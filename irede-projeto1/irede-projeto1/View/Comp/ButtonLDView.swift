@@ -15,12 +15,10 @@ struct ButtonLDView: View {
             }
     }
 
-            
-
 struct ButtonLDView_Previews: PreviewProvider {
     static var previews: some View{
         ButtonLDView(isDark: .constant(false))
     }
-    }
+}
 
 

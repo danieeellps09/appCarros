@@ -19,65 +19,35 @@ struct OpenView: View {
             ZStack{
                 
                 ImageBackgroundView()
-//                    .ignoresSafeArea()
+                
                 ScrollView{
                     
                     VStack(alignment: .center) {
                         
-                        
-
                         Spacer()
-
-                        
 
                         TitleView()
 
-                        
-
                         InformationContainerView()
 
-                        
-
                         Spacer(minLength: 30)
-
-                        
 
                         NavigationLink(destination: MarcasView()) {
 
                             Text("Continuar")
-//                                .background(.black)
                                 .padding(.horizontal, 30)
                                 .foregroundColor(.black)
                                 .font(.headline)
                                 .background(.gray)
                                 .cornerRadius(3)
                                 .padding(.vertical,114)
-//                                .frame(minWidth: 10, maxWidth: .infinity, alignment: .center)
-                                
-                            
-                            
-                            
-
                         }
-
-                       
-
                     }
-
                 }
-                
             }
-
-             
-
         }
-    
-
     }
-
 }
-
-
 
 struct InformationDetailView: View {
 
@@ -88,7 +58,6 @@ struct InformationDetailView: View {
     var imageName: String = "car"
 
     
-
     var body: some View {
 
         HStack(alignment: .center) {
@@ -101,25 +70,18 @@ struct InformationDetailView: View {
 
                     .accessibility(addTraits: .isHeader)
 
-                
-
                 Text(subTitle)
 
                     .font(.body)
 
                     .fixedSize(horizontal: false, vertical: true)
-
             }
 
         }
-
         .padding(.top)
-
     }
 
 }
-
-
 
 #Preview {
 

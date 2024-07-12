@@ -6,8 +6,6 @@ struct MarcasView: View {
     @StateObject var viewModel = MarcaViewModel()
     @State private var searchText = ""
     @AppStorage("isDarkMode") private var isDark = false
-
-
     
     var filteredNames: [Marca] {
         if searchText.isEmpty {
@@ -19,61 +17,32 @@ struct MarcasView: View {
 
     var body: some View {
         NavigationView{
-            //        NavigationStack{
-                       VStack {
-                           
-            //               ToolbarView()
-            //                ButtonLDView()
 
+                       VStack {
                            
                             List(filteredNames, id: \.codigo) { marca in
                                 
-                                
                                 NavigationLink(destination: ModelosView(viewModel: ModelosViewModel(), marcaCodigo: marca.codigo)) {
                                     Text(marca.nome)
-                                    
-                                    
-                                    
-                                    
                                 }
-//                                .listRowBackground(Color.black.opacity(0.8))
-                                
                             }
-                        
-            //                .background(Gradient(colors: [.white, .gray, .black]))
-            //                .background(.black)
                        }
                        
-                       .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Escolha sua marca")
-//                       .scrollContentBackground(.hidden)
-
-
-                       
-                       .onAppear {
-                                viewModel.fetchMarcas()
-                        }
-                        .navigationTitle("Marcas")
-
-                       
-//                        .navigationBarTitleDisplayMode(.inline)
-                        
-
+                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Escolha sua marca")
             
-        } .toolbar{
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
-//                Button(action:{isDark.toggle()},label:{ isDark ? Image(systemName: "moon.fill").foregroundStyle(.white): Image(systemName: "sun.max.fill").foregroundStyle(.black)
-//                })
-                ButtonLDView(isDark: $isDark )
+                .onAppear {
+                        viewModel.fetchMarcas()
+                        }
+                .navigationTitle("Marcas")
+        } 
+                .toolbar{
+                    ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
+                        ButtonLDView(isDark: $isDark )
             }
 
-        }        .environment(\.colorScheme, isDark ? .dark : .light)
-
-        
-            .navigationBarBackButtonHidden()
-//        }
-           
-        
-        
+        }       
+                .environment(\.colorScheme, isDark ? .dark : .light)
+                .navigationBarBackButtonHidden()
     }
 }
 #Preview {

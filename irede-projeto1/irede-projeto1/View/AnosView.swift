@@ -14,57 +14,33 @@ struct AnosView: View {
         }
     }
     
-    
-
     let modeloCodigo: String
     let marcaCodigo: String
-
-
-
     var body: some View {
         NavigationView{
             VStack {
                 
-                //            ButtonLDView()
-                
                 List(filteredNames, id: \.codigo) { ano in
-                    Text(ano.nome)
                     
-                    //                    .listRowBackground(Color.gray.opacity(0.8))
+                    NavigationLink(destination: ValoresView(viewModel: ValoresViewModel(), modeloCodigo: modeloCodigo ,marcaCodigo: marcaCodigo, anoCodigo: ano.codigo)) {
+                        Text(ano.nome)
+                    }
                     
                 }
-                //            .background(Gradient(colors: [.white, .gray, .black]))
-                //            .background(.black)
-                //            .scrollContentBackground(.hidden)
-                //            .padding(.top)
-                //            .scrollContentBackground(.hidden)
-                
                 .onAppear {
                     viewModel.fetchAnos(forCarro:marcaCodigo,forModelo:modeloCodigo)
                 }
                 .navigationTitle("Anos")
             }
-        }
-        
-//        .navigationTitle("Modelos")
-//        .searchable(text: $searchText,prompt: "Escolha sua marca")
-        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Escolha sua marca")
-        .toolbar{
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
-//                Button(action:{isDark.toggle()},label:{ isDark ? Label("Dark",systemImage: "lightbulb.fill"): Label("Dark",systemImage: "lightbulb")
-//                })
-                ButtonLDView( isDark: $isDark)
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Escolha sua marca")
+                .toolbar{
+                    ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
+         Label("Dark",systemImage: "lightbulb")
+                }
             }
-
-        }        .environment(\.colorScheme, isDark ? .dark : .light)
-//        .navigationBarTitleDisplayMode(.inline)
-        
-      
-        
-        
+            .environment(\.colorScheme, isDark ? .dark : .light)
+        }
     }
     
-        
+    
 }
-
-
